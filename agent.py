@@ -54,7 +54,7 @@ class DSPyChatAgent(ChatAgent):
             history_entries.append({"question": messages[i].content, "answer": messages[i + 1].content})
         return dspy.History(messages=history_entries)
       
-    @mlflow.trace(span_type=SpanType.AGENT)
+    # @mlflow.trace(span_type=SpanType.AGENT)
     def predict(
         self,
         messages: list[ChatAgentMessage],
@@ -70,6 +70,4 @@ class DSPyChatAgent(ChatAgent):
 from mlflow.models import set_model
 AGENT = DSPyChatAgent()
 mlflow.dspy.autolog()
-# mlflow.set_experiment(experiment_id="835bf9ec05f24eb09289e8030853d968")
-mlflow.set_experiment(experiment_name="/Users/austin.choi@databricks.com/ai_pioneer_h2/03_Agents_in_Code")
 set_model(AGENT)
