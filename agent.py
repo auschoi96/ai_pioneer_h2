@@ -16,10 +16,11 @@ import os
 
 
 mlflow.dspy.autolog()
+mlflow.set_experiment(experiment_id="835bf9ec05f24eb09289e8030853d968")
 LLM_ENDPOINT_NAME = "databricks-llama-4-maverick"
 lm = dspy.LM(model=f"databricks/{LLM_ENDPOINT_NAME}")
 dspy.settings.configure(lm=lm)
-endpoint_name= "ka-ca0f678f-endpoint"
+endpoint_name= "ka-ca0f678f-endpoint" #update this
 
 class rag_signature(dspy.Signature):
   """
