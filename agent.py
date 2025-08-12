@@ -19,8 +19,7 @@ mlflow.dspy.autolog()
 LLM_ENDPOINT_NAME = "databricks-llama-4-maverick"
 lm = dspy.LM(model=f"databricks/{LLM_ENDPOINT_NAME}")
 dspy.settings.configure(lm=lm)
-endpoint_name= "ka-01481fed-endpoint"
-endpoint_url = "https://e2-demo-field-eng.cloud.databricks.com/serving-endpoints/gemma3n_image_audio_text/invocations"
+endpoint_name= "ka-ca0f678f-endpoint"
 
 class rag_signature(dspy.Signature):
   """
